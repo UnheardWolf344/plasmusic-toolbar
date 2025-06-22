@@ -52,6 +52,177 @@ KCM.SimpleKCM {
 
         Kirigami.Separator {
             Kirigami.FormData.isSection: true
+            Kirigami.FormData.label: i18n("Song Text Customization")
+        }
+
+        // group for title
+
+        ButtonGroup {
+            id: fullTitlePosition
+            property int value: SongAndArtistText.TextPosition.FirstLine
+        }
+
+        RadioButton {
+            Kirigami.FormData.label: i18n("Song title position:")
+            text: i18n("Hidden")
+            checked: fullTitlePosition.value == SongAndArtistText.TextPosition.Hidden
+            onCheckedChanged: () => {
+                if (checked) {
+                    fullTitlePosition.value = SongAndArtistText.TextPosition.Hidden
+                }
+            }
+            ButtonGroup.group: fullTitlePosition
+        }
+
+        RadioButton {
+            text: i18n("First line")
+            checked: fullTitlePosition.value == SongAndArtistText.TextPosition.FirstLine
+            onCheckedChanged: () => {
+                if (checked) {
+                    fullTitlePosition.value = SongAndArtistText.TextPosition.FirstLine
+                }
+            }
+            ButtonGroup.group: fullTitlePosition
+        }
+
+        RadioButton {
+            text: i18n("Second line")
+            checked: fullTitlePosition.value == SongAndArtistText.TextPosition.SecondLine
+            onCheckedChanged: () => {
+                if (checked) {
+                    fullTitlePosition.value = SongAndArtistText.TextPosition.SecondLine
+                }
+            }
+            ButtonGroup.group: fullTitlePosition
+        }
+
+        RadioButton {
+            text: i18n("Third line")
+            checked: fullTitlePosition.value == SongAndArtistText.TextPosition.SecondLine
+            onCheckedChanged: () => {
+                if (checked) {
+                    fullTitlePosition.value = SongAndArtistText.TextPosition.SecondLine
+                }
+            }
+            ButtonGroup.group: fullTitlePosition
+        }
+
+
+        // group for artists
+
+        Item {
+            // adds spacing between the groups
+            height: 0.5 * Kirigami.Units.gridUnit
+        }
+
+        ButtonGroup {
+            id: fullArtistsPosition
+            property int value: SongAndArtistText.TextPosition.SecondLine
+        }
+
+        RadioButton {
+            Kirigami.FormData.label: i18n("Artists position:")
+            text: i18n("Hidden")
+            checked: fullArtistsPosition.value == SongAndArtistText.TextPosition.Hidden
+            onCheckedChanged: () => {
+                if (checked) {
+                    fullArtistsPosition.value = SongAndArtistText.TextPosition.Hidden
+                }
+            }
+            ButtonGroup.group: fullArtistsPosition
+        }
+
+        RadioButton {
+            text: i18n("First line")
+            checked: fullArtistsPosition.value == SongAndArtistText.TextPosition.FirstLine
+            onCheckedChanged: () => {
+                if (checked) {
+                    fullArtistsPosition.value = SongAndArtistText.TextPosition.FirstLine
+                }
+            }
+            ButtonGroup.group: fullArtistsPosition
+        }
+
+        RadioButton {
+            text: i18n("Second line")
+            checked: fullArtistsPosition.value == SongAndArtistText.TextPosition.SecondLine
+            onCheckedChanged: () => {
+                if (checked) {
+                    fullArtistsPosition.value = SongAndArtistText.TextPosition.SecondLine
+                }
+            }
+            ButtonGroup.group: fullArtistsPosition
+        }
+
+        RadioButton {
+            text: i18n("Third line")
+            checked: fullArtistsPosition.value == SongAndArtistText.TextPosition.SecondLine
+            onCheckedChanged: () => {
+                if (checked) {
+                    fullArtistsPosition.value = SongAndArtistText.TextPosition.SecondLine
+                }
+            }
+            ButtonGroup.group: fullArtistsPosition
+        }
+
+        // group for album
+        Item {
+            // adds spacing between the groups
+            height: 0.5 * Kirigami.Units.gridUnit
+        }
+
+        ButtonGroup {
+            id: fullAlbumPosition
+            property int value: SongAndArtistText.TextPosition.SecondLine
+        }
+
+        RadioButton {
+            Kirigami.FormData.label: i18n("Album title position:")
+            text: i18n("Hidden")
+            checked: fullAlbumPosition.value == SongAndArtistText.TextPosition.Hidden
+            onCheckedChanged: () => {
+                if (checked) {
+                    fullAlbumPosition.value = SongAndArtistText.TextPosition.Hidden
+                }
+            }
+            ButtonGroup.group: fullAlbumPosition
+        }
+
+        RadioButton {
+            text: i18n("First line")
+            checked: fullAlbumPosition.value == SongAndArtistText.TextPosition.FirstLine
+            onCheckedChanged: () => {
+                if (checked) {
+                    fullAlbumPosition.value = SongAndArtistText.TextPosition.FirstLine
+                }
+            }
+            ButtonGroup.group: fullAlbumPosition
+        }
+
+        RadioButton {
+            text: i18n("Second line")
+            checked: fullAlbumPosition.value == SongAndArtistText.TextPosition.SecondLine
+            onCheckedChanged: () => {
+                if (checked) {
+                    fullAlbumPosition.value = SongAndArtistText.TextPosition.SecondLine
+                }
+            }
+            ButtonGroup.group: fullAlbumPosition
+        }
+
+        RadioButton {
+            text: i18n("Third line")
+            checked: fullAlbumPosition.value == SongAndArtistText.TextPosition.SecondLine
+            onCheckedChanged: () => {
+                if (checked) {
+                    fullAlbumPosition.value = SongAndArtistText.TextPosition.SecondLine
+                }
+            }
+            ButtonGroup.group: fullAlbumPosition
+        }
+
+        Kirigami.Separator {
+            Kirigami.FormData.isSection: true
             Kirigami.FormData.label: "Song Text scrolling"
         }
 
