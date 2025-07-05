@@ -26,8 +26,8 @@ Item {
     readonly property int iconSize: Math.round(widgetThickness * plasmoid.configuration.panelIconSizeRatio)
     readonly property int lengthMargin: Math.round((widgetThickness - Math.max(controlsSize, iconSize))) / 2
 
-    readonly property bool colorsFromAlbumCover: plasmoid.configuration.colorsFromAlbumCover
-    readonly property bool useImageColors: panelIcon.imageReady && panelIcon.type == PanelIcon.Type.Image && colorsFromAlbumCover
+    readonly property bool compactColorsFromAlbumCover: plasmoid.configuration.compactColorsFromAlbumCover
+    readonly property bool useImageColors: panelIcon.imageReady && panelIcon.type == PanelIcon.Type.Image && compactColorsFromAlbumCover
     readonly property color imageColor: useImageColors ? panelIcon.imageColor : Kirigami.Theme.textColor
     readonly property color backgroundColorFromImage: Kirigami.ColorUtils.tintWithAlpha(imageColor, "black", 0.5)
     property color backgroundColor: useImageColors ? backgroundColorFromImage : "transparent"
@@ -208,8 +208,10 @@ Item {
         }
 
         GridLayout {
-            columns: horizontal ? grid.children.length : 1
-            rows: horizontal ? 1 : grid.children.length
+            id: controlsGrid
+
+            columns: horizontal ? controlsGrid.children.length : 1
+            rows: horizontal ? 1 : controlsGrid.children.length
 
             Layout.fillHeight: horizontal
             Layout.fillWidth: !horizontal

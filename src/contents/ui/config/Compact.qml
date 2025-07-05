@@ -27,7 +27,7 @@ KCM.SimpleKCM {
     property alias cfg_pauseTextScrollingWhileMediaIsNotPlaying: pauseWhileMediaIsNotPlaying.checked
     property alias cfg_textScrollingEnabled: textScrollingEnabledCheckbox.checked
     property alias cfg_textScrollingResetOnPause: textScrollingResetOnPauseCheckbox.checked
-    property alias cfg_colorsFromAlbumCover: colorsFromAlbumCover.checked
+    property alias cfg_compactColorsFromAlbumCover: compactColorsFromAlbumCover.checked
     property alias cfg_panelBackgroundRadius: panelBackgroundRadius.value
     property alias cfg_fillAvailableSpace: fillAvailableSpaceCheckbox.checked
     property alias cfg_songTextAlignment: songTextPositionRadio.value
@@ -428,7 +428,7 @@ KCM.SimpleKCM {
             enabled: useAlbumCoverAsPanelIcon.checked
 
             CheckBox {
-                id: colorsFromAlbumCover
+                id: compactColorsFromAlbumCover
             }
 
             Kirigami.ContextualHelpButton {
@@ -438,7 +438,7 @@ KCM.SimpleKCM {
 
         Slider {
             Layout.preferredWidth: 10 * Kirigami.Units.gridUnit
-            enabled: colorsFromAlbumCover.checked
+            enabled: compactColorsFromAlbumCover.checked
             id: panelBackgroundRadius
             from: 0
             to: 25

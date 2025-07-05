@@ -17,6 +17,21 @@ Item {
     Layout.minimumWidth: column.implicitWidth
     Layout.minimumHeight: column.implicitHeight
 
+    readonly property var desktopWidgetBg: plasmoid.configuration.desktopWidgetBg
+    readonly property bool fullColorsFromAlbumCover: plasmoid.configuration.fullColorsFromAlbumCover
+    
+    readonly property color imageColor: imageColors.dominant;
+    readonly property color backgroundColorFromImage: Kirigami.ColorUtils.tintWithAlpha(imageColor, "black", 0.5)
+    property color backgroundColor: {
+        if (fullColorsFromAlbumCover) return backgroundColorFromImage 
+    }
+
+    Rectangle {
+        anchors.fill: parent
+        color: backgroundColor
+        radius: 0
+    }
+
     ColumnLayout {
         id: column
 
@@ -30,6 +45,7 @@ Item {
             height: width
 
             Image {
+                id: albumImage
                 anchors.fill: parent
                 source: {
                     if (status === Image.Error || !player.artUrl) {
@@ -165,5 +181,10 @@ Item {
 
         }
 
+    }
+
+    Kirigami.ImageColors {
+        id: imageColors
+        source: albumImage
     }
 }

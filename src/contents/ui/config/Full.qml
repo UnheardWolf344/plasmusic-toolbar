@@ -18,6 +18,7 @@ KCM.SimpleKCM {
     property alias cfg_fullArtistsPosition: fullArtistsPosition.value
     property alias cfg_fullTitlePosition: fullTitlePosition.value
     property alias cfg_fullAlbumPosition: fullAlbumPosition.value
+    property alias cfg_fullColorsFromAlbumCover: fullColorsFromAlbumCover.checked
 
     Kirigami.FormLayout {
         id: form
@@ -200,6 +201,16 @@ KCM.SimpleKCM {
             to: 10
             stepSize: 1
             Kirigami.FormData.label: i18n("Speed:")
+        }
+
+        Kirigami.Separator {
+            Kirigami.FormData.isSection: true
+            Kirigami.FormData.label: i18n("Background")
+        }
+
+        CheckBox {
+            id: fullColorsFromAlbumCover
+            Kirigami.FormData.label: i18n("Colors from album cover:")
         }
 
         Kirigami.Separator {
