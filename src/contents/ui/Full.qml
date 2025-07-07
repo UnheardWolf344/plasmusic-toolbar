@@ -29,6 +29,11 @@ Item {
         } else {
             return "transparent";
         }
+        if (fullColorsFromAlbumCover) {
+            return backgroundColorFromImage 
+        } else {
+            return "transparent";
+        }
     }
 
     Rectangle {
