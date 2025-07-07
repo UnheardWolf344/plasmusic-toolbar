@@ -23,13 +23,18 @@ Item {
     readonly property color imageColor: imageColors.dominant;
     readonly property color backgroundColorFromImage: Kirigami.ColorUtils.tintWithAlpha(imageColor, "black", 0.5)
     property color backgroundColor: {
-        if (fullColorsFromAlbumCover) return backgroundColorFromImage 
+        if (fullColorsFromAlbumCover) {
+            return backgroundColorFromImage 
+        } else {
+            return "transparent";
+        }
     }
 
     Rectangle {
         anchors.fill: parent
         color: backgroundColor
-        radius: 0
+        opacity: fullColorsFromAlbumCover ? 1 : 0
+        radius: 10
     }
 
     ColumnLayout {
@@ -48,10 +53,18 @@ Item {
                 id: albumImage
                 anchors.fill: parent
                 source: {
+                    imageColors.update()
+
                     if (status === Image.Error || !player.artUrl) {
                         return albumPlaceholder;
                     }
                     return player.artUrl;
+                }
+
+                // update color when image becomes visible, otherwise we get black color
+                // sometimes, specially when the widget first loads
+                onVisibleChanged: {
+                    if (status === Image.Ready) imageColors.update()
                 }
 
                 fillMode: Image.PreserveAspectFit
