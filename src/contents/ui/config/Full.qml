@@ -19,6 +19,7 @@ KCM.SimpleKCM {
     property alias cfg_fullTitlePosition: fullTitlePosition.value
     property alias cfg_fullAlbumPosition: fullAlbumPosition.value
     property alias cfg_fullColorsFromAlbumCover: fullColorsFromAlbumCover.checked
+    property alias cfg_fullPanelBackgroundRadius: fullPanelBackgroundRadius.value
 
     Kirigami.FormLayout {
         id: form
@@ -211,6 +212,16 @@ KCM.SimpleKCM {
         CheckBox {
             id: fullColorsFromAlbumCover
             Kirigami.FormData.label: i18n("Colors from album cover:")
+        }
+
+        Slider {
+            id: fullPanelBackgroundRadius
+            Layout.preferredWidth: 10 * Kirigami.Units.gridUnit
+            enabled: fullColorsFromAlbumCover.checked
+            from: 0
+            to: 50
+            stepSize: 5
+            Kirigami.FormData.label: i18n("Colored background radius:")
         }
 
         Kirigami.Separator {

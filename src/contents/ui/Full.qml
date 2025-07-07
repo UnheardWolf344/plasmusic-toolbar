@@ -19,6 +19,7 @@ Item {
 
     readonly property var desktopWidgetBg: plasmoid.configuration.desktopWidgetBg
     readonly property bool fullColorsFromAlbumCover: plasmoid.configuration.fullColorsFromAlbumCover
+    readonly property int fullPanelBackgroundRadius: plasmoid.configuration.fullPanelBackgroundRadius
     
     readonly property color imageColor: imageColors.dominant;
     readonly property color backgroundColorFromImage: Kirigami.ColorUtils.tintWithAlpha(imageColor, "black", 0.5)
@@ -34,7 +35,7 @@ Item {
         anchors.fill: parent
         color: backgroundColor
         opacity: fullColorsFromAlbumCover ? 1 : 0
-        radius: 10
+        radius: fullPanelBackgroundRadius
     }
 
     ColumnLayout {

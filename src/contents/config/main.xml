@@ -78,6 +78,9 @@
         <entry name="panelBackgroundRadius" type="Int">
             <default>8</default>
         </entry>
+        <entry name="fullPanelBackgroundRadius" type="Int">
+            <default>10</default>
+        </entry>
         <entry name="fillAvailableSpace" type="Bool">
             <default>false</default>
         </entry>
