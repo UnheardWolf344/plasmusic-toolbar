@@ -57,7 +57,6 @@ Item {
 
             Image {
                 id: albumImage
-                id: albumImage
                 anchors.fill: parent
                 source: {
                     imageColors.update()
