@@ -54,6 +54,7 @@ Item {
             Layout.margins: 10
             width: 300
             height: width
+            color: 'transparent'
 
             Image {
                 id: albumImage
